@@ -15,6 +15,7 @@ export default function Column(props: ColumnProps) {
       </div>
       {props.orders.map((order) => (
         <div
+          key={order.id}
           onClick={() => props.onClick && props.onClick(order)}
           className={s["pk-card"]}
         >

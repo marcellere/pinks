@@ -43,7 +43,7 @@ export function RidersProvider(props: RidersProviderProps) {
     }
   }, [orders]);
 
-  const context = { riders };
+  const context = { riders, setRiders };
   return (
     <RidersContext.Provider value={context}>
       {props.children}

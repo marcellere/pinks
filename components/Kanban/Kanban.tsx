@@ -1,9 +1,12 @@
 import s from "./Kanban.module.scss";
 import Column from "../Column";
 import { useOrders } from "@/contexts/Orders.context";
+import { useRiders } from "@/contexts/Riders.context";
 
 export default function Kanban() {
   const { orders } = useOrders();
+
+  console.log(orders)
 
   return (
     <section className={s["pk-kanban"]}>
@@ -23,8 +26,9 @@ export default function Kanban() {
       <Column
         title="Listo"
         orders={orders.filter((i) => i.state === "READY")}
-        onClick={(order) =>
+        onClick={(order) => {
           order.state = "DELIVERED"
+        }
         }
       />
     </section>
